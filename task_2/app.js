@@ -2,7 +2,6 @@ let x = 1;
 let y = 100
 while (x <= y)
 {
-    let string = '';
     if (x % 3 === 0)
     {
         if (x % 5 === 0)
