@@ -1,26 +1,29 @@
-let x = 8;
-let y = 8;
-if (x < 1 || y < 1)
-    console.log("Bad arguments =(");
-else
+function FizzBuzz(x, y)
 {
-    for (let i = x;i != 0; i--)
+    if (x < 1 || y < 1)
+    console.log("Bad arguments =(");
+    else
     {
-        let string = '';
-        for (let j = y; j != 0; j--)
+        for (let i = x;i != 0; i--)
         {
-            if (j % 2 === y % 2 )
+            let string = '';
+            for (let j = y; j != 0; j--)
             {
-                if (i % 2 != x % 2)
+                if (j % 2 === y % 2 )
                 {
-                    string += ' ';
-                    j--;
+                    if (i % 2 != x % 2)
+                    {
+                        string += ' ';
+                        j--;
+                    }
+                    string += '#';
                 }
-                string += '#';
+                else
+                    string += ' ';
             }
-            else
-                string += ' ';
+            console.log(string);
         }
-        console.log(string);
     }
 }
+
+FizzBuzz(8,8);

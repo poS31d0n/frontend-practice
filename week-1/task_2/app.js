@@ -1,22 +1,25 @@
-let x = 1;
-let y = 100;
-if (x < 1 || x >= y)
-    console.log("Bad arguments =(");
-else
+function chess (x, y)
 {
-    while (x <= y)
+    if (x < 1 || x >= y)
+    console.log("Bad arguments =(");
+    else
     {
-        if (x % 3 === 0)
+        while (x <= y)
         {
-            if (x % 5 === 0)
-                console.log('FizzBuzz');
+            if (x % 3 === 0)
+            {
+                if (x % 5 === 0)
+                    console.log('FizzBuzz');
+                else
+                    console.log('Fizz');        
+            }
+            else if (x % 5 === 0)
+                console.log('Buzz');
             else
-                console.log('Fizz');        
+                console.log(x);
+            x++;
         }
-        else if (x % 5 === 0)
-            console.log('Buzz');
-        else
-            console.log(x);
-        x++;
     }
 }
+
+chess(1, 100);
