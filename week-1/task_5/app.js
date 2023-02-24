@@ -1,13 +1,25 @@
 function isEven (i)
 {
-    if (i === 1 || i === 0)
+    if (i < 0 )
+        return isEven(-i);
+    if (i === 4)
         return Boolean(i);
-    else if (i % 2 === 0)
+    if (i === 0)
+        return Boolean(1)
+    if (i % 2 === 0)
+        return isEven(4);
+    else if (i === 1)
+        return Boolean(0);
+    else if (i % 2 === 1)
         return isEven(1);
-    else
-        return isEven(0);
+    
 }
 
-console.log(isEven(50));
+console.log(isEven(0));
+console.log(isEven(1));
+console.log(isEven(2));
+console.log(isEven(3));
+console.log();
 console.log(isEven(75));
-console.log(isEven(-10));
+console.log(isEven(50));
+console.log(isEven(-1));
