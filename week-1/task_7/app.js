@@ -1,3 +1,36 @@
+////////////////////////////////////////// N_1
+
+// function range(firstNomber, lastNomber, rangeNomber = 1)
+// {
+//     if (rangeNomber === 0)
+//         return "Bad arguments =(";
+//     let arr = [firstNomber];
+//     if (firstNomber === lastNomber)
+//         return arr;
+//     if (rangeNomber < 0 )
+//         rangeNomber *= -1;
+//     let i = 1;
+//     if (firstNomber > lastNomber)
+//     {
+//         while (lastNomber - 1 < firstNomber - rangeNomber)
+//         {
+//             firstNomber -= rangeNomber;
+//             arr[i++] = firstNomber;
+//         }
+//     }
+//     else
+//     {
+//         while(firstNomber + rangeNomber < lastNomber + 1)
+//         {
+//             firstNomber += rangeNomber;
+//             arr[i++] = firstNomber;
+//         }
+//     }
+//     return arr;
+// }
+
+////////////////////////////////////////// N_2
+
 function range(firstNomber, lastNomber, rangeNomber = 1)
 {
     if (rangeNomber === 0)
@@ -9,24 +42,21 @@ function range(firstNomber, lastNomber, rangeNomber = 1)
         rangeNomber *= -1;
 
     let i = 1;
+    let delit = 1;
     if (firstNomber > lastNomber)
     {
-        while (lastNomber - 1 < firstNomber - rangeNomber)
-        {
-            firstNomber -= rangeNomber;
-            arr[i++] = firstNomber;
-        }
+        rangeNomber *= -1;
+        delit = -1;
     }
-    else
+    while (lastNomber + delit != firstNomber + rangeNomber)
     {
-        while(firstNomber + rangeNomber < lastNomber + 1)
-        {
-            firstNomber += rangeNomber;
-            arr[i++] = firstNomber;
-        }
+        firstNomber += rangeNomber;
+        arr[i++] = firstNomber;
     }
     return arr;
 }
+
+////////////////////////////////////////////////////////////
 
 function sum(arr)
 {
@@ -37,5 +67,10 @@ function sum(arr)
     return nomber;
 }
 
+
+
+
 console.log(sum(range(1, 10)));
 console.log(range(5, 2, -1));
+console.log(range(2, 5, -1));
+
