@@ -2,7 +2,8 @@
 
 
 https://codebra.ru/ru/lessons-css/fonts/6/1
-
+https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout#%D0%B4%D0%B2%D0%B5_%D0%BE%D1%81%D0%B8_grid_layout
+https://developer.mozilla.org/ru/docs/Web/CSS/background
 
 https://flexboxfroggy.com/#ru
 https://cssgridgarden.com/#ru

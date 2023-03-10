@@ -10,5 +10,4 @@ document.querySelector('#component_2').onclick = function() {
     document.querySelector('#component_1').style.background = "#FFFFFF";
     document.getElementById("menu_1").style.display = "flex";
     document.querySelector('#component_2').style.background = "grey";
-
 }
