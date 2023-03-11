@@ -1,0 +1,166 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url(./Roboto/Roboto-Bold.ttf);
+}
+
+body {
+	background-color: #F7F8FA;
+}
+
+.header {
+	display: flex;
+
+	width: 1600px;
+	height: 100px;
+
+	border-bottom: 2px solid #EDEFF2;
+}
+.header__content {
+	display: flex;
+	align-items: center;
+
+	height: 100%;
+	width: 100%;
+	padding: 25px;
+	gap: 80px;
+}
+
+.header__left {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 100%;
+	width: 181px;
+}
+
+.header__menu {
+	display: flex;
+	align-items: center;
+
+	height: 100%;
+	width: 425px;
+	gap: 25px
+}
+
+.header__search {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 100%;
+	width: 430px;
+
+	background-color: white;
+	border-radius: 50px;
+}
+
+.header__right{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 100%;
+	width: 273px;
+}
+
+
+
+.menu__image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search__menu {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	
+	width: 307px;
+	padding: 15px;
+}
+.right__avatar {
+	display: flex;
+	align-items: center;
+
+	gap: 25px;
+}
+.right__buttons {
+	display: flex;
+	align-items: center;
+
+	gap: 10px;
+}
+
+
+.button {
+	border: 0;
+}
+.button__circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+
+	background-color: white;
+}
+.button__search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 67px;
+
+	background: 0;
+}
+
+
+
+.text {
+	font-family: 'Roboto';
+}
+.text__left {
+	font-size: 18px;
+
+	color: #4D5E80;
+}
+.text__menu {
+	font-size: 13px;
+
+	color: #7D8FB3;
+}
+.text__avatar {
+	font-size: 13px;
+
+	color: #6B7A99;
+}
+
+
+.images {
+	background-color: white;
+}
+.images__menu {
+}
+.images__avatar {
+}
+
+
+.input {
+	border: 0;
+}
+.input__search {
+	font-family: 'Roboto';    
+	font-size: 12px;
+
+	width: 222px;
+}
