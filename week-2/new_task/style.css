@@ -277,13 +277,11 @@ body {
 	background-color: white;
 }
 .button__search {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    height: 100%;
+    width: 61px;
+    background: 0;
 
-	width: 67px;
-
-	background: 0;
+    border-radius: 50px;
 }
 .button__head__1 {
 	display: flex;
@@ -382,6 +380,7 @@ body {
 	
 	height: 288px;
 	width: 100%;
+	border-radius: 10px;
 }
 
 
