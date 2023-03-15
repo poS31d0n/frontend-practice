@@ -52,13 +52,30 @@ sendRequest('GET', 'https://jsonplaceholder.typicode.com/photos')
 	})
 	.catch(err => console.log(err))
 
-
+let grid_bool = false;
 document.querySelector("#button_to_grid").onclick = () => {
-	document.querySelector("#button_to_grid").style.backgroundColor = "grey"
-	document.querySelector("#button_to_flex").style.backgroundColor = "white"
+	if (grid_bool === true) {
+		document.querySelector("#button_to_grid").style.backgroundColor = "white";
+		grid_bool = false;
+	}
+	else {
+		document.querySelector("#button_to_grid").style.backgroundColor = "grey";
+		grid_bool = true;
+	}
+	flex_bool = false;
+	document.querySelector("#button_to_flex").style.backgroundColor = "white";
 }
 
+let flex_bool = false;
 document.querySelector("#button_to_flex").onclick = () => {
-	document.querySelector("#button_to_flex").style.backgroundColor = "grey"
-	document.querySelector("#button_to_grid").style.backgroundColor = "white"
+	if (flex_bool === true) {
+		document.querySelector("#button_to_flex").style.backgroundColor = "white";
+		flex_bool = false;
+	}
+	else {
+		document.querySelector("#button_to_flex").style.backgroundColor = "grey";
+		flex_bool = true;
+	}
+	grid_bool = false;
+	document.querySelector("#button_to_grid").style.backgroundColor = "white";
 }
