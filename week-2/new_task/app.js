@@ -26,6 +26,28 @@ function getListContent(data) {
 	return result;
 }
 
+function getBlocksContent(data) {
+	let result = [];
+
+	
+	for(let i = 0; i < 7;) {
+		
+		if ((i < 2) || (i > 4 && i < 7)) {
+			let div = document.createElement('div');
+			div.className = 'product_grid_top';
+			div.innerHTML = `<img class="images images__product" src="${data[i++].url}" alt=""><img class="images images__product" src="${data[i++].url}" alt="">`;
+			result.push(div);
+		}
+		else {
+			let div = document.createElement('div');
+			div.className = 'product_grid_bottom';
+			div.innerHTML = `<img class="images images__product" src="${data[i++].url}" alt=""><img class="images images__product" src="${data[i++].url}" alt=""><img class="images images__product" src="${data[i++].url}" alt="">`;
+			result.push(div);
+		}
+	}
+	return result;
+}
+
 
 
 function sendRequest(method, url) {
@@ -49,33 +71,52 @@ function sendRequest(method, url) {
 sendRequest('GET', 'https://jsonplaceholder.typicode.com/photos')
 	.then(data => {
 		document.querySelector('#row').append(...getListContent(data));
+		document.querySelector('#blocks').append(...getBlocksContent(data));
 	})
 	.catch(err => console.log(err))
 
+
+
+
+
+
 let grid_bool = false;
+
 document.querySelector("#button_to_grid").onclick = () => {
 	if (grid_bool === true) {
 		document.querySelector("#button_to_grid").style.backgroundColor = "white";
+		document.querySelector("#blocks").style.display = "none"
 		grid_bool = false;
+		document.querySelector("#button_to_flex").style.backgroundColor = "white";
+		document.querySelector("#row").style.display = "flex"
 	}
 	else {
 		document.querySelector("#button_to_grid").style.backgroundColor = "grey";
+		document.querySelector("#blocks").style.display = "grid"
 		grid_bool = true;
+		document.querySelector("#button_to_flex").style.backgroundColor = "white";
+		document.querySelector("#row").style.display = "none"
 	}
 	flex_bool = false;
-	document.querySelector("#button_to_flex").style.backgroundColor = "white";
 }
 
+
 let flex_bool = false;
+
 document.querySelector("#button_to_flex").onclick = () => {
 	if (flex_bool === true) {
 		document.querySelector("#button_to_flex").style.backgroundColor = "white";
+		document.querySelector("#row").style.display = "flex"
 		flex_bool = false;
+		document.querySelector("#button_to_grid").style.backgroundColor = "white";
+		document.querySelector("#blocks").style.display = "none"
 	}
 	else {
 		document.querySelector("#button_to_flex").style.backgroundColor = "grey";
+		document.querySelector("#row").style.display = "flex"
 		flex_bool = true;
+		document.querySelector("#button_to_grid").style.backgroundColor = "white";
+		document.querySelector("#blocks").style.display = "none"		
 	}
 	grid_bool = false;
-	document.querySelector("#button_to_grid").style.backgroundColor = "white";
 }
