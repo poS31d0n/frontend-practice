@@ -1,0 +1,113 @@
+body {
+    width: 100%;
+    height: 100vh;
+
+    background: no-repeat center/100% url(./photo/background.avif);
+}
+
+header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    height: 10%;
+    width: 100%;
+    padding: 20px;
+
+    border-bottom: 2px solid white;
+}
+.header__right{
+    display: flex;
+
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    height: 90%;
+    width: 100%;
+}
+.main__top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 10%;
+
+    padding: 10px;
+}
+.main__display {
+    width: 100%;
+    height: 5%;
+    padding: 0px 90% 0px 2%;
+}
+.display__switch {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid white;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+}
+.main__bottom{
+
+    width: 100%;
+    height: 100%;
+    padding: 0% 2% 2% 2%;
+}
+
+.menu {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+
+    border: 2px solid white;
+    border-radius: 0px 10px 10px 10px;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.radios {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 7%;
+    height: 70%;
+
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.text {
+    color: white;
+}
+
+
+.button {
+    height: 100%;
+    width: 100%;
+
+}
+
+.button:first-child {
+    border-right: 1px solid white;
+    border-radius: 7px 0px 0px 0px;
+}
+.button:last-child {
+    border-left: 1px solid white;
+    border-radius: 0px 7px 0px 0px;
+}
