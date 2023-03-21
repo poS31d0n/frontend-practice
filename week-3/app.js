@@ -1,23 +1,32 @@
-const getJsonPlaceholder = async () => {
+const checks = document.querySelectorAll('.form-check-input');
+checks.forEach(function(ch) {
+  ch.addEventListener('click', function() {
+    var that = this;
+    checks.forEach(function(ch2) {
+      if (ch2 != that)
+        ch2.checked = false;
+    });
+  });
+});
 
-    if (document.querySelector("#api_1").checked == true)
-    {
-        // Нужно понять как делать запрос на определенное кол-во запроса !
-        const people = await axios.get("https://swapi.dev/api/people");
-        console.log(people);
-    }
-    else if(document.querySelector("#api_2").checked == true)
-    {
-        const data = await axios.get("https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,10,11,12");
-        // Вывод url
-        // console.log(data.data[0].url);
-        console.log(data.data);
-    }
-    else if(document.querySelector("#api_3").checked == true)
-    {
-        // Нужно понять как делать запрос на определенное кол-во запроса !
-    }
+
+const getNewCharacters = async () => {
+	let number = document.querySelector(".form-control").value;
+	if (number >= 0 ) {
+		if (document.querySelector("#api_1").checked == true)
+		{
+			getPicsumPhotos(number);
+		}
+		else if(document.querySelector("#api_2").checked == true)
+		{
+			getRickAndMortyCharacters(number);
+		}
+		else if(document.querySelector("#api_3").checked == true)
+		{
+			getPokemonCharacters(number);
+		}
+	}
+	else
+		return;
 }
-
-
-    
+	
