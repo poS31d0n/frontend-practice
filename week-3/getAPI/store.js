@@ -15,20 +15,29 @@ let data = {
 		[this.maxPicsum, this.urlPicsum, this.dlcPicsum] = value.split(" ");
 	},
 
+
+
 	maxRick: 1,
 	urlRick: "https://rickandmortyapi.com/api/character/",
 
 	get getDataRick() {
 		return `max: ${this.maxRick}   url: ${this.urlRick}`;
 	},
+	set setDataRick(value) {
+		[this.maxRick, this.urlRick] = value.split(" ");
+	},
 
 
+	
 	maxPokemon: 1,
 	urlPokemon: "https://pokeapi.co/api/v2/pokemon/",
 
 	get getDataPokemon() {
 		return `max: ${this.maxPokemon}   url: ${this.urlPokemon}`;
-	  }
+	},
+	set setDataPokemon(value) {
+		[this.maxPokemon, this.urlPokemon] = value.split(" ");
+	}
 };
 
 
@@ -80,5 +89,4 @@ async function initAPIs(nameAPI, url, maxI, i, dlc = "") {
 		}
 	}
 	maxI = i;
-
 }
