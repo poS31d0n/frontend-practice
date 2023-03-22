@@ -26,6 +26,7 @@ async function getRickAndMortyCharacters (i) {
 		elem.style.display = 'none';
 
 		// Выход
+		undateContent(dataRick);
 		console.log(dataRick);
 	}
 }

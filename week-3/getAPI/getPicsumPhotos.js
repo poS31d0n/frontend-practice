@@ -26,6 +26,7 @@ async function getPicsumPhotos (i = 12) {
 		elem.style.display = 'none';
 
 		// Выход
+		undateContent(dataPicsum);
 		console.log(dataPicsum);
 	}
 }
