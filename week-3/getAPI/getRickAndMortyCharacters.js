@@ -12,7 +12,12 @@ async function getRickAndMortyCharacters (i) {
 	}
 	else
 	{
+		elem = document.querySelector(".information");
+
+		elem.style.display = 'flex';
+		elem.firstElementChild.innerHTML = "Waiting API-2";
 		await initAPIs("rick" , data.urlRick, data.maxRick, i);
+		elem.style.display = 'none';
 		console.log(dataRick);
 	}
 }

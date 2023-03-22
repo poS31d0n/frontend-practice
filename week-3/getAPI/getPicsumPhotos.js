@@ -12,7 +12,10 @@ async function getPicsumPhotos (i) {
 	}
 	else
 	{
+		elem.style.display = 'flex';
+        elem.firstElementChild.innerHTML = "Waiting API-1";
 		await initAPIs("picsum" , data.urlPicsum, data.maxPicsum, i, data.dlcPicsum);
+		elem.style.display = 'none';
 		console.log(dataPicsum);
 	}
 }

@@ -12,7 +12,12 @@ async function getPokemonCharacters (i) {
     }
     else
 	{
+        elem = document.querySelector(".information");
+
+        elem.style.display = 'flex';
+        elem.firstElementChild.innerHTML = "Waiting API-3";
         await initAPIs("pokemon" , data.urlPokemon, data.maxPokemon, i);
+        elem.style.display = 'none';
 	    console.log(dataPokemon);
     }
 }
