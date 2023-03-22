@@ -4,6 +4,9 @@ let dataRick = [];
 let dataPokemon = [];
 
 let data = {
+	displayButton: 'flex',
+
+
 	maxPicsum: 1,
 	urlPicsum: "https://picsum.photos/id/",
 	dlcPicsum: "/info",

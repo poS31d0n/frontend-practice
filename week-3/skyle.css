@@ -5,7 +5,7 @@
   }
 
 body {
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 
 	background: no-repeat center/100% url(./photo/background.avif);
@@ -87,11 +87,12 @@ main {
 	height: 100%;
 	width: 100%;
 
-	display: flex;
+	/* ////////////////////////////////////////////////////////// */
+	display: none;
 	justify-content: space-between;
 	flex-direction: column;
 }
-.row_element {
+.row_element_flex {
 	height: 33%;
 	width: 100%;
 
@@ -99,7 +100,7 @@ main {
 	align-items: center;
 	justify-content: space-between;
 }
-.row_content {
+.row_content_flex {
 	height: 100%;
 	width: 25%;
 
@@ -110,8 +111,29 @@ main {
 }
 
 
-.grid_my {
 
+.grid_my {
+	height: 100%;
+	width: 100%;
+
+	/* ////////////////////////////////////////////////////////// */	
+	display: grid;
+	
+}
+.row_element_grid {
+	height: 100%;
+	width: 100%;
+	/* padding: 10px;
+	gap: 10px; */
+
+	display: grid;
+	grid-auto-flow: column;
+}
+.row_content_grid {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	align-content: baseline;
 }
 
 
@@ -120,7 +142,7 @@ main {
 	justify-content: space-around;
 	align-items: center;
 
-	width: 7%;
+	width: 10%;
 	height: 70%;
 
 	border: 2px solid white;
@@ -135,6 +157,11 @@ main {
 }
 .text__info {
 	font-size: 100px;
+}
+.text__grid {
+	display: grid;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -164,6 +191,10 @@ main {
 
 
 .image {
-    width: 200px;
-    height: 150px;
+	height: 150px;
+	width: 200px;
+}
+.image__grid {
+	height: 100px;
+	width: 200px;
 }

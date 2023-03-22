@@ -13,11 +13,19 @@ async function getRickAndMortyCharacters (i) {
 	else
 	{
 		elem = document.querySelector(".information");
+		backDisp = document.querySelector(`.${data.displayButton}_my`);
 
+		backDisp.style.display = 'none';
 		elem.style.display = 'flex';
-		elem.firstElementChild.innerHTML = "Waiting API-2";
+
+		elem.firstElementChild.innerHTML = "Waiting Rick and Morty";
+
 		await initAPIs("rick" , data.urlRick, data.maxRick, i);
+
+		backDisp.style.display = `${data.displayButton}`;
 		elem.style.display = 'none';
+
+		// Выход
 		console.log(dataRick);
 	}
 }
