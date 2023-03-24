@@ -23,7 +23,7 @@ async function initAPIpicsum(i){
 	}
 }
 
-async function getPicsumPhotos (i) {
+async function getPicsumPhotos (i = 12) {
 
 	if (i === "")
 		i = 12;

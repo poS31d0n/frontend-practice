@@ -36,25 +36,35 @@ displaySwitch.forEach(function(ev_1) {
 
 const getRadio = async () => {
 	const button = document.querySelectorAll('.form-check-input');
-	button.forEach(function(elem) {
+	button.forEach(async function(elem) {
 		if (elem.checked == true)
-			getNewCharacters(elem)
+			await getNewCharacters(elem)
 	});
 }
 
-const getNewCharacters = async (radio) => {
-	
+const getNewCharacters = async (radio, i = 30) => {
+	console.log(radio);
+
+	// const button = document.querySelectorAll('.form-check-input');
+	// button.forEach(async function(elem) {
+	// 	if (elem.checked == true)
+
+	// });
+
 	let number = document.querySelector(".form-control").value;
 
-	switch (radio.id) {
-		case 'api_1':
-			getPicsumPhotos(number);
+	switch (radio) {
+		case 'picsum':
+			await getPicsumPhotos(i);
 			break;
-		case 'api_2':
-			getRickAndMortyCharacters(number);
+		case 'rick':
+			await getRickAndMortyCharacters(i);
 			break;
-		case 'api_3':
-			getPokemonCharacters(number);
+		case 'pokemon':
+			await getPokemonCharacters(i);
 			break;
 	}
 }
+
+
+let currentRadio;

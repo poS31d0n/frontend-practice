@@ -44,7 +44,7 @@ async function initAPIrick(i){
 	data.maxRick--;
 }
 
-async function getRickAndMortyCharacters (i) {
+async function getRickAndMortyCharacters (i = 12) {
 
 	if (i === "")
 		i = 12;
