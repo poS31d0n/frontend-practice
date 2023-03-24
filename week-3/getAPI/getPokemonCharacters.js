@@ -20,7 +20,7 @@ async function initAPIpokemon(i){
 
 async function getPokemonCharacters (i) {
 
-	if (i == "")
+	if (i === "")
 		i = 12;
 	if (i <= 0)
 		return;
@@ -45,7 +45,8 @@ async function getPokemonCharacters (i) {
 		elem.style.display = 'none';
 
 		// Выход
-		undateContent(dataPokemon);
+		// undateContent(dataPokemon, i);
 		console.log(dataPokemon);
 	}
+	undateContent(dataPokemon, i);
 }

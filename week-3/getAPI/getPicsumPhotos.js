@@ -23,9 +23,9 @@ async function initAPIpicsum(i){
 	}
 }
 
-async function getPicsumPhotos (i = 12) {
+async function getPicsumPhotos (i) {
 
-	if (i == "")
+	if (i === "")
 		i = 12;
 	if (i <= 0)
 		return;
@@ -50,7 +50,8 @@ async function getPicsumPhotos (i = 12) {
 		elem.style.display = 'none';
 
 		// Выход
-		undateContent(dataPicsum);
+		// undateContent(dataPicsum, i);
 		console.log(dataPicsum);
 	}
+	undateContent(dataPicsum, i);
 }

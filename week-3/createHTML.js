@@ -1,8 +1,8 @@
 
-function getListContent() {
+function getListContent(num = 12) {
 	let result = [];
 	
-	for(let i=0; i < 12;) {
+	for(let i=0; i < num;) {
 
 		let div = document.createElement('div');
 		div.className = "row_element_flex";
@@ -22,10 +22,10 @@ function getListContent() {
 
 
 
-function getBlocksContent() {
+function getBlocksContent(num = 12) {
 	let result = [];
 
-	for(let i = 0; i < 12;) {
+	for(let i = 0; i < num;) {
 		let div = document.createElement('div');
 		div.className = 'row_element_grid';
 		for(let j = 0; j < 4; j++) {
@@ -51,27 +51,36 @@ function getBlocksContent() {
 
 
 
-function undateContent(infoCharacters) {
-	for(let i=0; i < 12; i++) {
+function undateContent(infoCharacters, i) {
 
-		document.querySelector(`#img_flex_${i}`).src = infoCharacters[i].url;
-		document.querySelector(`#text_name_flex_${i}`).innerHTML = infoCharacters[i].name;
-		document.querySelector(`#text_data_flex_${i}`).innerHTML = infoCharacters[i].id;
+	document.querySelector('.flex_my').append(getListContent(i));
+	console.log("Flex was created");
+	document.querySelector('.grid_my').append(getBlocksContent(i));
+	console.log("Grid was created");
+	
 
-		document.querySelector(`#img_grid_${i}`).src = infoCharacters[i].url;
-		document.querySelector(`#text_name_grid_${i}`).innerHTML = infoCharacters[i].name;
-		document.querySelector(`#text_data_grid_${i}`).innerHTML = infoCharacters[i].id;
+	for(let j=0; j < i; j++) {
+
+		document.querySelector(`#img_flex_${j}`).src = infoCharacters[j].url;
+		document.querySelector(`#text_name_flex_${j}`).innerHTML = infoCharacters[j].name;
+		document.querySelector(`#text_data_flex_${j}`).innerHTML = infoCharacters[j].id;
+
+		document.querySelector(`#img_grid_${j}`).src = infoCharacters[j].url;
+		document.querySelector(`#text_name_grid_${j}`).innerHTML = infoCharacters[j].name;
+		document.querySelector(`#text_data_grid_${j}`).innerHTML = infoCharacters[j].id;
 	
 	}
 	return ;
 }
 
 
-(function() {
-	
-	document.querySelector('.grid_my').append(...getBlocksContent());
-	console.log("Grid was created");
+(async function() {
+
 	document.querySelector('.flex_my').append(...getListContent());
 	console.log("Flex was created");
+	document.querySelector('.grid_my').append(...getBlocksContent());
+	console.log("Grid was created");
+	
+	// await getRadio();
 
 })();

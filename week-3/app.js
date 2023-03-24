@@ -34,25 +34,27 @@ displaySwitch.forEach(function(ev_1) {
 	});
 });
 
-
-
-const getNewCharacters = async () => {
-	let number = document.querySelector(".form-control").value;
-	if (number >= 0 ) {
-		if (document.querySelector("#api_1").checked == true)
-		{
-			getPicsumPhotos(number);
-		}
-		else if(document.querySelector("#api_2").checked == true)
-		{
-			getRickAndMortyCharacters(number);
-		}
-		else if(document.querySelector("#api_3").checked == true)
-		{
-			getPokemonCharacters(number);
-		}
-	}
-	else
-		return;
+const getRadio = async () => {
+	const button = document.querySelectorAll('.form-check-input');
+	button.forEach(function(elem) {
+		if (elem.checked == true)
+			getNewCharacters(elem)
+	});
 }
+
+const getNewCharacters = async (radio) => {
 	
+	let number = document.querySelector(".form-control").value;
+
+	switch (radio.id) {
+		case 'api_1':
+			getPicsumPhotos(number);
+			break;
+		case 'api_2':
+			getRickAndMortyCharacters(number);
+			break;
+		case 'api_3':
+			getPokemonCharacters(number);
+			break;
+	}
+}

@@ -46,7 +46,7 @@ async function initAPIrick(i){
 
 async function getRickAndMortyCharacters (i) {
 
-	if (i == "")
+	if (i === "")
 		i = 12;
 	if (i <= 0)
 		return;
@@ -71,7 +71,8 @@ async function getRickAndMortyCharacters (i) {
 		elem.style.display = 'none';
 
 		// Выход
-		undateContent(dataRick);
+		// undateContent(dataRick, i);
 		console.log(dataRick);
 	}
+	undateContent(dataRick, i);
 }
