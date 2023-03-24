@@ -1,4 +1,49 @@
 
+async function initAPIrick(i){
+	let init;
+	let j;
+	let m = 1;
+    let number = data.maxRick;
+
+	if (number == 0) {
+		data.maxRick++;
+		number = '1';
+	}
+	else {
+		data.maxRick++;
+		number = data.maxRick;
+	}
+
+    for(j = data.maxRick + 1; j <= i; j++) {
+        number += `,${j}`;
+		m++;
+	}
+
+    init = await axios.get(`${data.urlRick}${number}`);
+
+	i = m;
+
+	if(i == 1) {
+		dataRick[data.maxRick - 1] = {
+			id: init.data.id,
+			name: init.data.name,
+			url: init.data.image
+		};
+		data.maxRick++;
+	}
+	else {
+		for(j = 0; j < i; j++) {
+			dataRick[data.maxRick - 1] = {
+				id: init.data[j].id,
+				name: init.data[j].name,
+				url: init.data[j].image
+			};
+			data.maxRick++;
+		}
+	}
+	data.maxRick--;
+}
+
 async function getRickAndMortyCharacters (i) {
 
 	if (i == "")
@@ -20,7 +65,7 @@ async function getRickAndMortyCharacters (i) {
 
 		elem.firstElementChild.innerHTML = "Waiting Rick and Morty";
 
-		await initAPIs("rick" , data.urlRick, data.maxRick, i);
+		await initAPIrick(i);
 
 		backDisp.style.display = `${data.displayButton}`;
 		elem.style.display = 'none';

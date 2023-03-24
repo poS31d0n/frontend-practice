@@ -12,20 +12,10 @@ checks.forEach(function(ch) {
 
 
 function switchMenu (button_1, button_2) {
-
-	// Надо добавить проверку на свич flex/grid при 0ом запросе !
-
-	if (button_1.style.backgroundColor == "rgb(127, 125, 156)") {
-		button_1.style.backgroundColor = "#0d6efd";
-		document.querySelector(`.flex_my`).style.display = `flex`;
-		document.querySelector(`.grid_my`).style.display = `none`;
-	}
-	else {
-		button_1.style.backgroundColor = "#7F7D9C";
-		document.querySelector(`.${button_1.innerHTML}_my`).style.display = `${button_1.innerHTML}`;
-		button_2.style.backgroundColor = "#0d6efd";
-		document.querySelector(`.${button_2.innerHTML}_my`).style.display = `none`;
-	}
+	button_1.style.backgroundColor = "#7F7D9C";
+	document.querySelector(`.${button_1.innerHTML}_my`).style.display = `${button_1.innerHTML}`;
+	button_2.style.backgroundColor = "#0d6efd";
+	document.querySelector(`.${button_2.innerHTML}_my`).style.display = `none`;
 }
 
 

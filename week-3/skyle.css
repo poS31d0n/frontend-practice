@@ -18,12 +18,14 @@ header {
 
 	height: 10%;
 	width: 100%;
-	padding: 20px;
+	padding: 20px 2% 20px 20px;
 
 	border-bottom: 2px solid white;
 }
 .header__right{
 	display: flex;
+	gap: 20px;
+	width: 23%;
 
 }
 
@@ -87,7 +89,7 @@ main {
 	width: 100%;
 
 	/* ////////////////////////////////////////////////////////// */
-	display: none;
+	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 }
@@ -170,6 +172,7 @@ main {
 .button:first-child {
 	border-right: 1px solid white;
 	border-radius: 7px 0px 0px 0px;
+	background-color: #7F7D9C;
 }
 .button:last-child {
 	border-left: 1px solid white;

@@ -7,9 +7,9 @@ let data = {
 	displayButton: 'flex',
 
 
-	maxPicsum: 1,
-	urlPicsum: "https://picsum.photos/id/",
-	dlcPicsum: "/info",
+	maxPicsum: 0,
+	urlPicsum: "https://picsum.photos/v2/list?page=",
+	dlcPicsum: "&limit=",
 
 	get getDataPicsum() {
 		return `max: ${this.maxPicsum}   url: ${this.urlPicsum}   dlc: ${this.dlcPicsum}`;
@@ -20,7 +20,7 @@ let data = {
 
 
 
-	maxRick: 1,
+	maxRick: 0,
 	urlRick: "https://rickandmortyapi.com/api/character/",
 
 	get getDataRick() {
@@ -32,8 +32,10 @@ let data = {
 
 
 	
-	maxPokemon: 1,
-	urlPokemon: "https://pokeapi.co/api/v2/pokemon/",
+	
+	urlPokemon: "https://pokeapi.co/api/v2/pokemon?limit=",
+	dlcPokemon: "&offset=",
+	maxPokemon: 0,
 
 	get getDataPokemon() {
 		return `max: ${this.maxPokemon}   url: ${this.urlPokemon}`;
@@ -48,48 +50,48 @@ let data = {
 
 
 
-async function initAPIs(nameAPI, url, maxI, i, dlc = "") {
+// async function initAPIs(nameAPI, url, maxI, i, dlc = "") {
 
-	let result = [];
-	let initURL = url;
-	let init;
+// 	let result = [];
+// 	let initURL = url;
+// 	let init;
 
 
-	if (i >= maxI) {
+// 	if (i >= maxI) {
 
-		for(let j = maxI; j <= i; j++)
-		{
-			// Нужно улучшть обработку 0 элемента(исключения)!
+// 		for(let j = maxI; j <= i; j++)
+// 		{
+// 			// Нужно улучшть обработку 0 элемента(исключения)!
 
-			init = await axios.get(`${initURL}${j}${dlc}`);
+// 			init = await axios.get(`${initURL}${j}${dlc}`);
 
-			switch(nameAPI) {
-				case 'picsum':
-					dataPicsum[j - 1] = {
-						id: init.data.id,
-						name: init.data.author,
-						url: init.data.download_url
-					};
-					data.maxPicsum++;
-					break;
-				case 'rick':
-					dataRick[j - 1] = {
-						id: init.data.id,
-						name: init.data.name,
-						url: init.data.image
-					};
-					data.maxRick++;
-					break;
-				case 'pokemon':
-					dataPokemon[j - 1] = {
-						id: init.data.id,
-						name: init.data.name,
-						url: init.data.sprites.front_default
-					};
-					data.maxPokemon++;
-					break;
-			}
-		}
-	}
-	maxI = i;
-}
+// 			switch(nameAPI) {
+// 				case 'picsum':
+// 					dataPicsum[j - 1] = {
+// 						id: init.data.id,
+// 						name: init.data.author,
+// 						url: init.data.download_url
+// 					};
+// 					data.maxPicsum++;
+// 					break;
+// 				case 'rick':
+// 					dataRick[j - 1] = {
+// 						id: init.data.id,
+// 						name: init.data.name,
+// 						url: init.data.image
+// 					};
+// 					data.maxRick++;
+// 					break;
+// 				case 'pokemon':
+// 					dataPokemon[j - 1] = {
+// 						id: init.data.id,
+// 						name: init.data.name,
+// 						url: init.data.sprites.front_default
+// 					};
+// 					data.maxPokemon++;
+// 					break;
+// 			}
+// 		}
+// 	}
+// 	maxI = i;
+// }
