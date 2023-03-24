@@ -1,4 +1,31 @@
 
+function getRadioContent() {
+	let result = [];
+	let check;
+	let text;
+
+	for(let i=1; i < 4; i++) {
+
+		let div = document.createElement('div');
+		div.className = "form-check radios";
+		
+		if (i == 1)
+		{
+			text = 'Picsum';
+			check = 'checked="true"';
+		}
+		else if (i == 2)
+			text = 'Rick and Morty';
+		else if (i == 3)
+			text = 'Pokemon';
+
+		div.innerHTML = `<input onclick="getNewCharacters(this)" class="form-check-input" type="checkbox" id="api_${i}" ${check}><label class="form-check-label text" for="flexCheckDisabled">${text}</label>`;
+		check = '';
+		result.push(div);
+	}
+	return result;	
+}
+
 function getListContent(num = 12) {
 	let result = [];
 	
@@ -76,6 +103,8 @@ function undateContent(infoCharacters, i) {
 
 (async function() {
 
+	document.querySelector('.main__top').append(...getRadioContent());
+	console.log("Radio was created");
 	document.querySelector('.flex_my').append(...getListContent());
 	console.log("Flex was created");
 	document.querySelector('.grid_my').append(...getBlocksContent());
