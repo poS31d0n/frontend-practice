@@ -50,7 +50,6 @@ async function getPicsumPhotos (i) {
 		elem.style.display = 'none';
 
 		// Выход
-		// undateContent(dataPicsum, i);
 		console.log(dataPicsum);
 	}
 	undateContent(dataPicsum, i);

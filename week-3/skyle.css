@@ -4,11 +4,47 @@
 	box-sizing: border-box;
   }
 
+html {
+
+	background-image: url(./photo/background.avif);
+	
+	background-repeat: no-repeat;
+	
+	background-position: center center;
+	
+	background-attachment: fixed;
+	
+	-webkit-background-size: cover;
+	
+	-moz-background-size: cover;
+	
+	-o-background-size: cover;
+	
+	background-size: cover;
+	
+}
+
 body {
 	width: 100vw;
 	height: 100vh;
 
-	background: no-repeat center/100% url(./photo/background.avif);
+
+	background-image: url(./photo/background.avif);
+	
+	background-repeat: no-repeat;
+	
+	background-position: center center;
+	
+	background-attachment: fixed;
+	
+	-webkit-background-size: cover;
+	
+	-moz-background-size: cover;
+	
+	-o-background-size: cover;
+	
+	background-size: cover;
+	
 }
 
 header {
@@ -165,8 +201,12 @@ main {
 
 
 .button {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	
 	height: 100%;
-	width: 100%;
+	width: 50%;
 
 }
 .button:first-child {

@@ -45,7 +45,6 @@ async function getPokemonCharacters (i) {
 		elem.style.display = 'none';
 
 		// Выход
-		// undateContent(dataPokemon, i);
 		console.log(dataPokemon);
 	}
 	undateContent(dataPokemon, i);

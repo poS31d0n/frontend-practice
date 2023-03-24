@@ -38,7 +38,7 @@ function getListContent(num = 12) {
 		{
 			let nextDiv = document.createElement('div');
 			nextDiv.className = `row_content_flex`;
-			nextDiv.innerHTML = `<img id="img_flex_${i}" src="./Image.png" class="img-thumbnail image" alt=""><p id="text_name_flex_${i}" class="text">Name item 1</p><p id="text_data_flex_${i}" class="text">Id item 1</p>`;
+			nextDiv.innerHTML = `<img id="img_flex_${i}" src="" class="img-thumbnail image" alt=""><p id="text_name_flex_${i}" class="text"></p><p id="text_data_flex_${i}" class="text"></p>`;
 			div.append(nextDiv)
 			i++;
 		}
@@ -60,12 +60,12 @@ function getBlocksContent(num = 12) {
 			if ((i < 4) || (i > 5 && i < 10)) {
 				nextDiv = document.createElement('div');
 				nextDiv.className = 'row_content_grid';
-				nextDiv.innerHTML = `<img id="img_grid_${i}" src="./Image.png" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid">Name item 1</p><p id="text_data_grid_${i}" class="text text__grid">Id item 1</p>`;
+				nextDiv.innerHTML = `<img id="img_grid_${i}" src="" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid"></p><p id="text_data_grid_${i}" class="text text__grid"></p>`;
 			}
 			else {
 				nextDiv = document.createElement('div');
 				nextDiv.className = 'row_content_grid';
-				nextDiv.innerHTML = `<img id="img_grid_${i}" src="./Image.png" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid">Name item 1</p><p id="text_data_grid_${i}" class="text text__grid">Id item 1</p>`;
+				nextDiv.innerHTML = `<img id="img_grid_${i}" src="" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid"></p><p id="text_data_grid_${i}" class="text text__grid"></p>`;
 				j++;
 			}
 			i++;
@@ -78,7 +78,7 @@ function getBlocksContent(num = 12) {
 
 
 
-function undateContent(infoCharacters, i) {
+function undateContent(infoCharacters, i = 12) {
 
 	document.querySelector('.flex_my').append(getListContent(i));
 	console.log("Flex was created");
@@ -111,5 +111,4 @@ function undateContent(infoCharacters, i) {
 	console.log("Grid was created");
 	
 	// await getRadio();
-
 })();
