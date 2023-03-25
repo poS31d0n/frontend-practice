@@ -28,7 +28,6 @@ function getBlocksContent(num) {
   let result = [];
 
   for (let i = 0; i < num;) {
-	console.log('kk');
     let div = document.createElement("div");
     div.className = "row_element_grid";
     for (let j = 0; j < 4; j++) {
@@ -52,12 +51,17 @@ function getBlocksContent(num) {
 }
 
 function undateContent(infoCharacters, i = 20) {
+
+	// document.querySelectorAll(".row_element_flex").remove();
+	// document.querySelectorAll(".row_element_grid").remove();
+
   document.querySelector(".flex_my").append(...getListContent(i));
   console.log("");
   console.log("Flex was created");
   document.querySelector(".grid_my").append(...getBlocksContent(i));
   console.log("Grid was created");
   console.log("");
+
 
 
   for (let j = 0; j < i; j++) {
@@ -79,13 +83,14 @@ function undateContent(infoCharacters, i = 20) {
 (async function () {
 //   document.querySelector(".main__top").append(...radioNew());
 //   console.log("Radio was created");
-	radioNew(next_arr);
+	await radioNew(next_arr);
 	document.querySelector(".flex_my").append(...getListContent());
 	console.log("Flex was created");
 	document.querySelector(".grid_my").append(...getBlocksContent());
 	console.log("Grid was created");
 
-	await getRadio();
+	await getNewCharacters('picsum');
+
 })();
 
 function radioNew(arr) {

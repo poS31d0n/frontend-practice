@@ -47,5 +47,10 @@ async function getPokemonCharacters (i) {
 		// Выход
 		console.log(dataPokemon);
 	}
+	let doc = document.querySelectorAll(".row_element_flex");
+	for (let item of doc)
+		item.remove();
+
+		
 	undateContent(dataPokemon, i);
 }

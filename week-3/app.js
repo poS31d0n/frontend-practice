@@ -46,6 +46,9 @@ const getNewCharacters = async (radio, i = 20) => {
 	// console.log(radio);
 
 	let number = document.querySelector(".form-control").value;
+	if (document.querySelector(`#${radio}`).checked === false)
+		return;
+		console.log(document.querySelector(`#${radio}`));
 
 	switch (radio) {
 		case 'picsum':

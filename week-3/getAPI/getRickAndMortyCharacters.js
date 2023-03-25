@@ -73,5 +73,12 @@ async function getRickAndMortyCharacters (i = 12) {
 		// Выход
 		console.log(dataRick);
 	}
+	let doc = document.querySelectorAll(".row_element_flex");
+	for (let item of doc)
+		item.remove();
+
+
 	undateContent(dataRick, i);
+	// console.log(doc);
+
 }
