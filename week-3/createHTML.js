@@ -1,11 +1,11 @@
 const next_arr = [
-  { id: "picsum", name: "picsum", onclick: () => getNewCharacters('picsum') },
-  { id: "rick", name: "rick", onclick: () => getNewCharacters('rick') },
-  {id: 'pokemon', name: 'pokemon', onclick: () => getNewCharacters('pokemon')},
+  { id: "picsum", name: "Picsum", onclick: () => getNewCharacters('picsum'), check: "checked"},
+  { id: "rick", name: "Rick", onclick: () => getNewCharacters('rick')},
+  {id: 'pokemon', name: 'Pokemon', onclick: () => getNewCharacters('pokemon')},
 ];
 
 
-function getListContent(num = 12) {
+function getListContent(num) {
   let result = [];
 
   for (let i = 0; i < num; ) {
@@ -24,10 +24,11 @@ function getListContent(num = 12) {
   return result;
 }
 
-function getBlocksContent(num = 12) {
+function getBlocksContent(num) {
   let result = [];
 
-  for (let i = 0; i < num; ) {
+  for (let i = 0; i < num;) {
+	console.log('kk');
     let div = document.createElement("div");
     div.className = "row_element_grid";
     for (let j = 0; j < 4; j++) {
@@ -50,11 +51,14 @@ function getBlocksContent(num = 12) {
   return result;
 }
 
-function undateContent(infoCharacters, i = 12) {
-  document.querySelector(".flex_my").append(getListContent(i));
+function undateContent(infoCharacters, i = 20) {
+  document.querySelector(".flex_my").append(...getListContent(i));
+  console.log("");
   console.log("Flex was created");
-  document.querySelector(".grid_my").append(getBlocksContent(i));
+  document.querySelector(".grid_my").append(...getBlocksContent(i));
   console.log("Grid was created");
+  console.log("");
+
 
   for (let j = 0; j < i; j++) {
     document.querySelector(`#img_flex_${j}`).src = infoCharacters[j].url;
@@ -75,12 +79,13 @@ function undateContent(infoCharacters, i = 12) {
 (async function () {
 //   document.querySelector(".main__top").append(...radioNew());
 //   console.log("Radio was created");
-  document.querySelector(".flex_my").append(...getListContent());
-  console.log("Flex was created");
-  document.querySelector(".grid_my").append(...getBlocksContent());
-  console.log("Grid was created");
+	radioNew(next_arr);
+	document.querySelector(".flex_my").append(...getListContent());
+	console.log("Flex was created");
+	document.querySelector(".grid_my").append(...getBlocksContent());
+	console.log("Grid was created");
 
-  await getRadio();
+	await getRadio();
 })();
 
 function radioNew(arr) {
@@ -90,10 +95,9 @@ function radioNew(arr) {
 		let div = document.createElement("div");
     	div.className = "form-check radios";
 		console.log(item);
-		div.innerHTML = `<input onclick="(${item.onclick.toString()})()" class="form-check-input" type="checkbox" id="${item.id}" ><label class="form-check-label text" for="flexCheckDisabled">${item.name}</label>`;
-	    // div.addEventListener('click', item.onclick);
+		div.innerHTML = `<input onclick="(${item.onclick.toString()})()" class="form-check-input" type="checkbox" id="${item.id}" ${item.check} ><label class="form-check-label text" for="flexCheckDisabled">${item.name}</label>`;
 		result.push(div);
 	}
 	document.querySelector(".main__top").append(...result);
 }
-radioNew(next_arr);
+// radioNew(next_arr);

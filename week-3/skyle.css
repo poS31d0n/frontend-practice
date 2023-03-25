@@ -70,7 +70,7 @@ main {
 	display: flex;
 	flex-direction: column;
 
-	height: 90%;
+	height: auto;
 	width: 100%;
 }
 .main__top {
@@ -204,7 +204,7 @@ main {
 	display: flex;
     justify-content: center;
     align-items: center;
-	
+
 	height: 100%;
 	width: 50%;
 

@@ -42,14 +42,8 @@ const getRadio = async () => {
 	});
 }
 
-const getNewCharacters = async (radio, i = 30) => {
-	console.log(radio);
-
-	// const button = document.querySelectorAll('.form-check-input');
-	// button.forEach(async function(elem) {
-	// 	if (elem.checked == true)
-
-	// });
+const getNewCharacters = async (radio, i = 20) => {
+	// console.log(radio);
 
 	let number = document.querySelector(".form-control").value;
 
