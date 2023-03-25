@@ -66,7 +66,9 @@ async function getRickAndMortyCharacters (i) {
 	let doc = document.querySelectorAll(".row_element_flex");
 	for (let item of doc)
 		item.remove();
-
+	doc = document.querySelectorAll(".row_element_grid");
+	for (let item of doc)
+		item.remove();
 
 	undateContent(dataRick, i);
 }

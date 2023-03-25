@@ -1,15 +1,3 @@
-const checks = document.querySelectorAll('.form-check-input');
-checks.forEach(function(ch) {
-  ch.addEventListener('click', function() {
-    let that = this;
-    checks.forEach(function(ch2) {
-      if (ch2 != that)
-        ch2.checked = false;
-    });
-  });
-});
-
-
 
 function switchMenu (button_1, button_2) {
 	button_1.style.backgroundColor = "#7F7D9C";
@@ -35,13 +23,21 @@ displaySwitch.forEach(function(ev_1) {
 
 
 const getNewCharacters = async (radio) => {
+	const checks = document.querySelectorAll('.form-check-input');
+	checks.forEach(function(ch) {
+	  ch.addEventListener('click', function() {
+		let that = this;
+		checks.forEach(function(ch2) {
+		  if (ch2 != that)
+			ch2.checked = false;
+		});
+	  });
+	});
 
-	if (!radio){
-		elem = document.querySelectorAll(".form-check-input")
-		for(let item of elem)
+	if (!radio)
+		for(let item of checks)
 			if (item.checked === true)
 				radio = item.id;
-	}
 
 	if (document.querySelector(`#${radio}`).checked === false)
 		return;

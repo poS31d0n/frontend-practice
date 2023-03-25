@@ -28,25 +28,27 @@ function getListContent(num) {
 
 function getBlocksContent(num) {
   let result = [];
-
+  let str = 0;
   for (let i = 0; i < num;) {
     let div = document.createElement("div");
     div.className = "row_element_grid";
-    for (let j = 0; j < 4; j++) {
-      let nextDiv;
-      if (i < 4 || (i > 5 && i < 10)) {
-        nextDiv = document.createElement("div");
-        nextDiv.className = "row_content_grid";
-        nextDiv.innerHTML = `<img id="img_grid_${i}" src="" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid"></p><p id="text_data_grid_${i}" class="text text__grid"></p>`;
-      } else {
-        nextDiv = document.createElement("div");
-        nextDiv.className = "row_content_grid";
-        nextDiv.innerHTML = `<img id="img_grid_${i}" src="" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid"></p><p id="text_data_grid_${i}" class="text text__grid"></p>`;
-        j++;
-      }
-      i++;
-      div.append(nextDiv);
-    }
+	if (str >= 6)
+		str = 0;
+	for (let j = 1; j <= 4; j++)
+	{
+		if (i < num) {
+		let nextDiv = document.createElement("div");
+		nextDiv.className = "row_content_grid";
+		if (str >= 4) {
+			j++;
+			str++;
+		}
+		str++;
+		nextDiv.innerHTML = `<img id="img_grid_${i}" src="" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid"></p><p id="text_data_grid_${i}" class="text text__grid"></p>`;
+		i++;
+		div.append(nextDiv);
+		}
+	}
     result.push(div);
   }
   return result;
@@ -57,12 +59,7 @@ function undateContent(infoCharacters, i = 20) {
 
 
   document.querySelector(".flex_my").append(...getListContent(i));
-//   console.log("");
-//   console.log("Flex was created");
   document.querySelector(".grid_my").append(...getBlocksContent(i));
-//   console.log("Grid was created");
-//   console.log("");
-
 
 
   for (let j = 0; j < i; j++) {
@@ -85,9 +82,7 @@ function undateContent(infoCharacters, i = 20) {
 
 	await radioNew(next_arr);
 	document.querySelector(".flex_my").append(...getListContent());
-	// console.log("Flex was created");
 	document.querySelector(".grid_my").append(...getBlocksContent());
-	// console.log("Grid was created");
 
 	await getNewCharacters('picsum');
 
@@ -99,10 +94,8 @@ function radioNew(arr) {
 	{
 		let div = document.createElement("div");
     	div.className = "form-check radios";
-		// console.log(item);
 		div.innerHTML = `<input onclick="(${item.onclick.toString()})()" class="form-check-input" type="checkbox" id="${item.id}" ${item.check} ><label class="form-check-label text" for="flexCheckDisabled">${item.name}</label>`;
 		result.push(div);
 	}
 	document.querySelector(".main__top").append(...result);
 }
-// radioNew(next_arr);
