@@ -23,19 +23,11 @@ async function initAPIpicsum(i){
 	}
 }
 
-async function getPicsumPhotos (i = 12) {
+async function getPicsumPhotos (i) {
 
-	if (i === "")
-		i = 12;
-	if (i <= 0)
-		return;
 
-	if (i <= data.maxPicsum)
-	{
-		console.log(dataPicsum.slice(0, i));
-	}
-	else
-	{
+	if (i > data.maxPicsum) {
+
 		elem = document.querySelector(".information");
 		backDisp = document.querySelector(`.${data.displayButton}_my`);
 
@@ -48,14 +40,12 @@ async function getPicsumPhotos (i = 12) {
 		
 		backDisp.style.display = `${data.displayButton}`;
 		elem.style.display = 'none';
-
-		// Выход
-		console.log(dataPicsum);
 	}
+
 	let doc = document.querySelectorAll(".row_element_flex");
 	for (let item of doc)
 		item.remove();
 
-		
+
 	undateContent(dataPicsum, i);
 }

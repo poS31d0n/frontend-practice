@@ -44,19 +44,11 @@ async function initAPIrick(i){
 	data.maxRick--;
 }
 
-async function getRickAndMortyCharacters (i = 12) {
+async function getRickAndMortyCharacters (i) {
 
-	if (i === "")
-		i = 12;
-	if (i <= 0)
-		return;
 
-	if (i <= data.maxRick)
-	{
-		console.log(dataRick.slice(0, i));
-	}
-	else
-	{
+	if (i > data.maxRick) {
+
 		elem = document.querySelector(".information");
 		backDisp = document.querySelector(`.${data.displayButton}_my`);
 
@@ -69,16 +61,12 @@ async function getRickAndMortyCharacters (i = 12) {
 
 		backDisp.style.display = `${data.displayButton}`;
 		elem.style.display = 'none';
-
-		// Выход
-		console.log(dataRick);
 	}
+
 	let doc = document.querySelectorAll(".row_element_flex");
 	for (let item of doc)
 		item.remove();
 
 
 	undateContent(dataRick, i);
-	// console.log(doc);
-
 }

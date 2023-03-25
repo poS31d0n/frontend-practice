@@ -20,17 +20,9 @@ async function initAPIpokemon(i){
 
 async function getPokemonCharacters (i) {
 
-	if (i === "")
-		i = 12;
-	if (i <= 0)
-		return;
 
-	if (i <= data.maxPokemon)
-	{
-		console.log(dataPokemon.slice(0, i));
-	}
-	else
-	{
+	if (i > data.maxPokemon) {
+
 		elem = document.querySelector(".information");
 		backDisp = document.querySelector(`.${data.displayButton}_my`);
 
@@ -43,14 +35,12 @@ async function getPokemonCharacters (i) {
 		
 		backDisp.style.display = `${data.displayButton}`;
 		elem.style.display = 'none';
-
-		// Выход
-		console.log(dataPokemon);
 	}
+
 	let doc = document.querySelectorAll(".row_element_flex");
 	for (let item of doc)
 		item.remove();
 
-		
+
 	undateContent(dataPokemon, i);
 }

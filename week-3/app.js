@@ -17,8 +17,6 @@ function switchMenu (button_1, button_2) {
 	button_2.style.backgroundColor = "#0d6efd";
 	document.querySelector(`.${button_2.innerHTML}_my`).style.display = `none`;
 }
-
-
 const displaySwitch = document.querySelectorAll('.button');
 displaySwitch.forEach(function(ev_1) {
 
@@ -34,34 +32,37 @@ displaySwitch.forEach(function(ev_1) {
 	});
 });
 
-const getRadio = async () => {
-	const button = document.querySelectorAll('.form-check-input');
-	button.forEach(async function(elem) {
-		if (elem.checked == true)
-			await getNewCharacters(elem)
-	});
-}
 
-const getNewCharacters = async (radio, i = 20) => {
-	// console.log(radio);
 
-	let number = document.querySelector(".form-control").value;
+const getNewCharacters = async (radio) => {
+
+	if (!radio){
+		elem = document.querySelectorAll(".form-check-input")
+		for(let item of elem)
+			if (item.checked === true)
+				radio = item.id;
+	}
+
 	if (document.querySelector(`#${radio}`).checked === false)
 		return;
-		console.log(document.querySelector(`#${radio}`));
+
+
+	let number = document.querySelector(".form-control").value;
+	if (number === "")
+		number = 12;
+	if (number <= 0)
+		return;
+
 
 	switch (radio) {
 		case 'picsum':
-			await getPicsumPhotos(i);
+			await getPicsumPhotos(number);
 			break;
 		case 'rick':
-			await getRickAndMortyCharacters(i);
+			await getRickAndMortyCharacters(number);
 			break;
 		case 'pokemon':
-			await getPokemonCharacters(i);
+			await getPokemonCharacters(number);
 			break;
 	}
 }
-
-
-let currentRadio;
