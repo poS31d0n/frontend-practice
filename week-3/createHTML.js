@@ -39,10 +39,8 @@ function getBlocksContent(num) {
 		if (i < num) {
 		let nextDiv = document.createElement("div");
 		nextDiv.className = "row_content_grid";
-		if (str >= 4) {
+		if (str >= 4)
 			j++;
-			str++;
-		}
 		str++;
 		nextDiv.innerHTML = `<img id="img_grid_${i}" src="" class="img-thumbnail image__grid" alt=""><p id="text_name_grid_${i}" class="text text__grid"></p><p id="text_data_grid_${i}" class="text text__grid"></p>`;
 		i++;
@@ -54,7 +52,7 @@ function getBlocksContent(num) {
   return result;
 }
 
-function undateContent(infoCharacters, i = 20) {
+function undateContent(infoCharacters, i) {
 
 
 
