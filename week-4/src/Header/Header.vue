@@ -15,6 +15,16 @@
 		components: {
 			MyInput, MyButton
 		},
+		data() {
+			return {
+				id: 1,
+			}
+		},
+		methods: {
+			getId() {
+				console.log(id)
+			}
+		}
 	}
 </script>
 

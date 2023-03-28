@@ -1,5 +1,5 @@
 <template>
-	<button onclick="getNewCharacters()" type="button" class="btn">Search</button>
+	<button type="button" class="btn">Search</button>
 </template>
 
 <script>

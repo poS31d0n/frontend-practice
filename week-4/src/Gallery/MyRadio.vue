@@ -1,23 +1,24 @@
 <template>
-	<section class="main__top">
-		<!-- Without JS -->
-		<div class="form-check radios">
-			<input onclick="(() => getNewCharacters('picsum'))()" class="form-check-input" type="checkbox" id="picsum" checked="">
-			<label class="form-check-label text" for="flexCheckDisabled">Picsum</label>
-		</div>
-		<div class="form-check radios">
-			<input onclick="(() => getNewCharacters('picsum'))()" class="form-check-input" type="checkbox" id="picsum">
-			<label class="form-check-label text" for="flexCheckDisabled">Rick</label>
-		</div>
-		<div class="form-check radios">
-			<input onclick="(() => getNewCharacters('picsum'))()" class="form-check-input" type="checkbox" id="picsum">
-			<label class="form-check-label text" for="flexCheckDisabled">Pokemon</label>
+	<section class="main__top" >
+		<div class="form-check radios" v-for="radio in radios">
+			<input :onclick="radio.onclick" class="form-check-input" type="checkbox" :id="radio.id" :checked="radio.check">
+			<label class="form-check-label text" for="flexCheckDisabled">{{radio.name}}</label>
 		</div>
 	</section>
 </template>
 
 <script>
-
+export default {
+	data() {
+		return {
+			radios: [
+				{id: "picsum", name: "Picsum", onclick: () => getNewCharacters('picsum'), check: "checked"},
+				{id: "rick", name: "Rick", onclick: () => getNewCharacters('rick')},
+				{id: 'pokemon', name: 'Pokemon', onclick: () => getNewCharacters('pokemon')}
+			]
+		}
+	}
+}
 </script>
 
 <style>
