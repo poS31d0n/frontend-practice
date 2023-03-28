@@ -1,15 +1,15 @@
 <template>
 	<header>
-		<form class="header__right">
-			<input class="form-control" type="text" placeholder="Введите количество картинок">
-			<button onclick="getNewCharacters()" type="button" class="btn btn-primary">Search</button>
+		<form>
+			<MyInput></MyInput>
+			<MyButton></MyButton>
 		</form>
 	</header>
 </template>
 
 <script>
-	import MyInput from './MyInput.vue';
-	import MyButton from './MyButton.vue';
+	import MyInput from '@/Header/MyInput.vue'
+	import MyButton from '@/Header/MyButton.vue'
 	
 	export default {
 		components: {
@@ -19,5 +19,23 @@
 </script>
 
 <style>
+
+	header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 10%;
+	width: 100%;
+	padding: 20px 2% 20px 20px;
+	border-bottom: 2px solid white;
+	}
+
+	form{
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	gap: 20px;
+	width: 23%;
+	}
 
 </style>

@@ -35,4 +35,9 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+#app {
+	height: 100%;
+  width: 100%;
+}
 </style>

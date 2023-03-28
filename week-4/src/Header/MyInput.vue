@@ -1,8 +1,5 @@
 <template>
-	<!-- <div class="post" v-for="post in posts">
-		<div><strong>Название:</strong> {{ post.title }}</div>
-		<div><strong>Описание:</strong> {{ post.body }}</div>
-	</div> -->
+	<input class="input" type="text" placeholder="Введите количество картинок">
 </template>
 
 <script>
@@ -22,10 +19,11 @@ export default {
 		border: 2px solid teal;
 		margin-top: 15px;
 	}
+
 	.input {
-	width: 100%;
-	border: 1px solid white;
-	padding: 10px 15px;
-	margin-top: 10px;
+		text-align: center;
+		width: 80%;
+		border: 1px solid white;
+		border-radius: 10px;
 	}
 </style>

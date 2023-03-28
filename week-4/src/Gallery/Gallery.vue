@@ -19,5 +19,10 @@
 </script>
 
 <style>
-
+	main {
+		display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+	}
 </style>
