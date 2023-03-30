@@ -1,7 +1,7 @@
 <template>
 	<section class="main__top" >
 		<div class="form-check radios" v-for="radio in radios">
-			<input :onclick="radio.onclick" class="form-check-input" type="checkbox" :id="radio.id" :checked="radio.check">
+			<input @click="() => typeRadio( radio.id )" class="form-check-input" type="checkbox" :id="radio.id" :checked="radio.check">
 			<label class="form-check-label text" for="flexCheckDisabled">{{radio.name}}</label>
 		</div>
 	</section>
@@ -12,13 +12,19 @@ export default {
 	data() {
 		return {
 			radios: [
-				{id: "picsum", name: "Picsum", onclick: () => getNewCharacters('picsum'), check: "checked"},
-				{id: "rick", name: "Rick", onclick: () => getNewCharacters('rick')},
-				{id: 'pokemon', name: 'Pokemon', onclick: () => getNewCharacters('pokemon')}
+				{id: "picsum", name: "Picsum", check: "checked"},
+				{id: "rick", name: "Rick"},
+				{id: 'pokemon', name: 'Pokemon'}
 			]
+		}
+	},
+	methods: {
+		typeRadio(name) {
+			this.$emit('giveRadio', name);
 		}
 	}
 }
+
 </script>
 
 <style>

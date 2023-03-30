@@ -1,7 +1,6 @@
 <template>
-	<Header></Header>
-	<Gallery></Gallery>
-	<button @click="getNewCharacters">ads</button>
+	<Header @addNum="getNewCharacters"></Header>
+	<gallery :arr="arr"/>
 </template>
 
 <script>
@@ -13,19 +12,24 @@ export default {
 	components: {
 		Header, Gallery
 	},
-	methods: {
-		getId() {
-				console.log('1')
-		},
-		async getNewCharacters() {
-			try {
-				const response = await axios.get('https://picsum.photos/v2/list?page0&limit=12')
-				console.log(response)
-			}
-			catch(e) {
-				alert('Ошибка')
-			}
+	data() {
+		return {
+			arr: [],
 		}
+	},
+	methods: {
+		getNewCharacters(scoreImages) {
+			this.arr = new Array(Number(scoreImages));
+    },
+		// async getNewCharacters() {
+		// 	try {
+		// 		const response = await axios.get('https://picsum.photos/v2/list?page0&limit=12')
+		// 		console.log(response)
+		// 	}
+		// 	catch(e) {
+		// 		alert('Ошибка')
+		// 	}
+		// }
 	}
 }
 </script>

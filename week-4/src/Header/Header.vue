@@ -1,8 +1,8 @@
 <template>
 	<header>
-		<form>
-			<MyInput></MyInput>
-			<MyButton></MyButton>
+		<form @submit.prevent>
+			<MyInput v-model="num" @give="getNum"></MyInput>
+			<MyButton @click="newNum"></MyButton>
 		</form>
 	</header>
 </template>
@@ -16,13 +16,19 @@
 			MyInput, MyButton
 		},
 		data() {
-			return {
-				id: 1,
-			}
-		},
+        return {
+          num: 12,
+        }
+    },
 		methods: {
-			getId() {
-				console.log(id)
+			getNum(score) {
+				this.num = score;
+			},
+			newNum() {
+				if (this.num >= 0)
+					this.$emit('addNum', this.num);
+				this.num = 12;
+				// Обнулить в MyInput ?
 			}
 		}
 	}

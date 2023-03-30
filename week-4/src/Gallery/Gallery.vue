@@ -1,8 +1,8 @@
 <template>
 	<main>
-		<MyRadio></MyRadio>
-		<MyDisplay></MyDisplay>
-		<MyImage></MyImage>
+		<MyRadio @giveRadio="giveRadio"></MyRadio>
+		<MyDisplay ></MyDisplay>
+		<MyImage :images="images"></MyImage>
 	</main>
 </template>
 
@@ -15,6 +15,22 @@
 		components: {
 			MyRadio, MyDisplay, MyImage
 		},
+		props: {
+			arr: {
+        type: Array,
+        required: true
+      }
+		},
+		data() {
+			return {
+				radio: 'picsum'
+			}
+		},
+		methods: {
+			giveRadio(typeRadio) {
+				this.radio = typeRadio;
+			}
+		}
 	}
 </script>
 
