@@ -69,7 +69,7 @@ export default {
 
 	.information {
 		/*  */
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 100%;
